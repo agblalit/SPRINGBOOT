@@ -39,7 +39,7 @@ pipeline {
 	stage('Publish') {
 	     steps {
 		echo 'Nexus Publishing'
-	        nexusPublisher nexusInstanceId: 'mynexus', nexusRepositoryId: 'releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/lib/jenkins/workspace/JENKINS-BOOT/target/springboot-0.0.1.jar']], mavenCoordinate: [artifactId: 'springboot', groupId: 'org.lalit', packaging: 'jar', version: '0.0.1']]] 
+	        nexusPublisher nexusInstanceId: 'mynexus', nexusRepositoryId: 'releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/lib/jenkins/workspace/JENKINS-BOOT/target/springboot-0.0.1.jar']], mavenCoordinate: [artifactId: 'springboot', groupId: 'org.lalit', packaging: 'jar', version: '0.0.2']]] 
              }
 	   }
         stage('Deploy') {
