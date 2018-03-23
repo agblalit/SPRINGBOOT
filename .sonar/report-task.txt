@@ -1,0 +1,6 @@
+projectKey=JENKINSBOOT
+serverUrl=http://172.31.40.236:9000/sonar
+serverVersion=6.4.0.25310
+dashboardUrl=http://172.31.40.236:9000/sonar/dashboard/index/JENKINSBOOT
+ceTaskId=AWGD-6pVp68ltwGwDjx4
+ceTaskUrl=http://172.31.40.236:9000/sonar/api/ce/task?id=AWGD-6pVp68ltwGwDjx4
