@@ -1,6 +1,5 @@
 pipeline {
     agent any
-    def pom = readMavenPom file: 'pom.xml'
     stages {
         stage('Checkout') {
             steps {
@@ -40,6 +39,7 @@ pipeline {
 	stage('Publish') {
 	     steps {
 		echo 'Nexus Publishing'
+	        def pom = readMavenPom file: 'pom.xml'
              }
 	   }
         stage('Deploy') {
