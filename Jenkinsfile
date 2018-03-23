@@ -40,15 +40,6 @@ pipeline {
 	     steps {
 		echo 'Nexus Publishing'
 		def pom = readMavenPom file: 'pom.xml'
-		  nexusPublisher nexusInstanceId: 'nexus2', \
-		  nexusRepositoryId: 'releases', \
-		  packages: [[$class: 'MavenPackage', \
-		  mavenAssetList: [[classifier: '', extension: '', \
-		  filePath: "target/${pom.artifactId}-${pom.version}.${pom.packaging}"]], \
-		  mavenCoordinate: [artifactId: "${pom.artifactId}", \
-		  groupId: "${pom.groupId}", \
-		  packaging: "${pom.packaging}", \
-		  version: "${pom.version}"]]]
              }
 	   }
         stage('Deploy') {
