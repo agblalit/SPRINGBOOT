@@ -4,6 +4,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Checkout'
+		checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '6e2a1012-d093-48af-abd5-647fe50ffc1c', url: 'git@github.com:agblalit/SPRINGBOOT.git']]])
             }
         }
         stage('Build') {
