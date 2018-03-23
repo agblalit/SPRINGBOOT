@@ -36,6 +36,12 @@ pipeline {
                 sh 'mvn package -DskipTests'
             }
         }
+	stage('Publish') {
+	     steps {
+		echo 'Nexus Publishing'
+	        nexusPublisher nexusInstanceId: 'localNexus', nexusRepositoryId: 'releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'target/springboot-0.0.1.jar']], mavenCoordinate: [artifactId: 'springboot', groupId: 'org.lalit', packaging: 'jar', version: '0.0.1']]]
+             }
+	   }
         stage('Deploy') {
             steps {
                 echo '## TODO DEPLOYMENT ##'
