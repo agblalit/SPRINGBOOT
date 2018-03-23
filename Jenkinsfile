@@ -39,7 +39,7 @@ pipeline {
 	stage('Publish') {
 	     steps {
 		echo 'Nexus Publishing'
-	        def pom = readMavenPom file: 'pom.xml'
+	        pom = readMavenPom file: 'pom.xml'
              }
 	   }
         stage('Deploy') {
